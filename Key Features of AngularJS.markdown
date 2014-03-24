@@ -27,11 +27,9 @@ Model
 In AngularJS, a Model is simply a JavaScript object. No need to extend anything or create any structure. This allows for nested models  - something that Backbone doesn’t do out-of-the-box.
 
 View
-
 The View is based on DOM objects, not on strings. The view is the HTML. HTML is declarative – well suited for UI design. The View should not contain any functional behavior. The flexibility here is to allow for multiple views per Controller.
 
 Services
-
 The Services in AngularJS are singletons that perform common tasks for web applications. If you need to share common functionality between Controllers, then use Services. Built-in AngularJS, Services start with a $. There are several ways to build a service: Service API, Factory API, or the $provide API.
 
 Data Binding
@@ -50,7 +48,6 @@ Testable
 Testing is a big concern for enterprise applications. There are several different ways to write and run tests against JavaScript code, thus against AngularJS. The developers at AngularJS advocate using Jasmine tests ran using Testacular. I have found this method of testing very straightforward and, while writing tests may not be the most enjoyable, it is just as importable as any other piece of developing an application.
 
 Conclusion
-
 I have enjoyed developing with AngularJS. I hope this post has, at the very least, convinced you to spend a couple of hours playing with AngularJS.
 
 To start, spend some time going through the AngularJS tutorial. Then create your own Custom AngularJS Plunker and see how quickly client-side development can be. As I said at the beginning, AngularJS has a really good community and very clean documentation, which goes into much more detail than this post. Thanks to the AngularJS team for developing this framework.

@@ -7,7 +7,7 @@ c. Patterns can be expressive
 
 Advantages
 a. Reusing patterns assists in preventing minor issues that can cause major problems in the application development process.
-b. Reusing patterns assists in preventing minor issues that can cause major problems in the application development process.
+b. Patterns can provide generalized solutions which are documented in a fashion that doesn't require them to be tied to a specific problem
 c. Certain patterns can actually decrease the overall file-size footprint of your code by avoiding repetition.
 d. Patterns add to a developers vocabulary, which makes communication faster.
 e. Patterns that are frequently used can be improved over time by harnessing the collective experiences other developers using those patterns contribute back to the design pattern community.

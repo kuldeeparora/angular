@@ -130,3 +130,23 @@
      	}
      }
 </pre>
+
+<pre>
+“Semicolons: Semicolons are optional in JavaScript. However, I recommend always including them, because otherwise JavaScript can guess wrong about the end of a statement.”<br>
+“Semicolons terminate statements, but not blocks. There is one case where you will see a semicolon after a block: a function expression is an expression that ends with a block. ”
+</pre>
+
+<pre>
+In JavaScript, undefined means a variable has been declared but has not yet been assigned a value, such as:
+
+var TestVar;
+alert(TestVar); //shows undefined
+alert(typeof TestVar); //shows undefined
+null is an assignment value. It can be assigned to a variable as a representation of no value:
+
+var TestVar = null;
+alert(TestVar); //shows null
+alert(typeof TestVar); //shows object
+From the preceding examples, it is clear that undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
+</pre>
+

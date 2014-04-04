@@ -16,7 +16,6 @@
         $(".loop2").append("<br>");
     }
 
-//    for (var num = 1; num<=5; num++){
         for (var row1=1; row1<=11; row1++){
             var b = row1++;
             $(".row1").append("<div style='float: left;'>" + b + "</div>");

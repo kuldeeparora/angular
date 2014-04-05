@@ -1,0 +1,37 @@
+[
+    {
+        "day": "Monday",
+        "content" : [
+            {
+                "time" : "10-12",
+                "text" : "dummy Text1"
+            },
+            {
+                "time" : "2-5",
+                "text" : "dummy Text2"
+            }
+        ]
+    },
+    {
+        "day": "Tuesday",
+        "content" : [
+            {
+                "time" : "1-2",
+                "text" : "dummy Text3"
+            },
+            {
+                "time" : "2-5",
+                "text" : "dummy Text4"
+            }
+        ]
+    },
+    {
+        "day": "Saturday",
+        "content" : [
+            {
+                "time" : "6-7",
+                "text" : "dummy Text5"
+            }
+        ]
+    }
+]

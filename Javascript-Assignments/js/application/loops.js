@@ -2,6 +2,7 @@
 
 (function(){
     "use strict";
+
     for (var num=1; num<=5; num++ ){
         for (var seq=1; seq<=num; seq++ ){
             $(".loop1").append("<div style='float: left;'>" + num + "</div>");

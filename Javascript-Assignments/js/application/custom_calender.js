@@ -14,7 +14,7 @@
                     "<span class='time'>" + data[i].content[j].time + "</span>" +
                     "<span class='text'>" + data[i].content[j].text + "</span>" +
                     "</div>");
-               }
+            }
        };
     });
 }());

@@ -144,7 +144,9 @@ console.log(civic.toString());
 </pre>
 
 <h3>3. The Singleton Pattern</h3>
-In conventional software engineering, the singleton pattern can be implemented by creating a class with a method that creates a new instance of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.<br>
+In conventional software engineering, the singleton pattern can be implemented by creating a class with a method that
+creates a new instance of the class if one doesn't exist. In the event of an instance already existing,
+it simply returns a reference to that object.<br>
 
 Exposing only those which you wish to make public is quite straight-forward from that point as demonstrated below:
 <pre>

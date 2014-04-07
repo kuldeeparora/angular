@@ -10,11 +10,25 @@ OOP is a pattern of writing program using Objects, Objects that encapsulate prop
 e.g. car as an object, model, seats, tyre are properties & driving left, moving back & fwd are behaviours.
 </dd>
 
-<dd>What is JSON Object ?</dd>
+<dd>What is Object ?</dd>
 <dd>
 <strong>Ans</strong>
 Object is the main data type in JavaScript. "Everything" in JavaScript is an Object.<br>
 A JavaScript object is a complex variable, with properties and methods.<br>
+</dd>
+
+<dd>What is JSON Object</dd>
+<dd>
+<strong>Ans</strong>
+JSON stands for Javascript Object Notation. Its a simple for of object in Javascript which includes properties and methods.
+It can be defined by open & close curly braces - {}
+var obj = {
+    data : "hi",
+    fn : function (){
+        alert("Hello");
+    }
+};
+
 </dd>
 
 <dd>How to create objects ?</dd>
@@ -40,13 +54,13 @@ var car2 = new Car("Nissan", "300ZX", 1992, ken);
 <dd>
 <strong>Ans</strong>
 prototype is a default property of any object in javascript which holds references to functions of that object. <br>
-Using prototype property we can extending or adding more functions to any object class
+Using prototype property we can extend or add more functions to any object class
 </dd>
 
 <dd>What is namespace ?</dd>
 <dd>
 <strong>Ans</strong>
-In JS all global functions and variables shared same namespace because of that face name-conflicts.
+In JS all global functions and variables shared same namespace because of that we may face name-conflicts.
 With the help of namespace we can define the scope of functions & variables.
 <dd>
 
@@ -76,7 +90,7 @@ With the help of namespace we can define the scope of functions & variables.
 
         typeof variable - number, string, object, boolean
 
-    Type of Object -
+    Instance - check type of Object -
         if(x instanceof Array){
             console.log(x.length);
         }
@@ -150,7 +164,13 @@ Design Pattern is a solution of a common problems
 </dd>
 
 <dd>About common design patterns - Singleton, Module, Factory etc</dd>
+<dd>
+<strong>Ans</strong>
+Singleton : In this pattern we restrict creation of multiple instances of an object. This pattern provides a solution to use a single instance of an object within a application.
+Module: In this pattern we enclose module functions & variables into a namespace to provide module specific functionalities without conflicting with other modules.
+Factory: In this pattern we implement a common solution to create different type of objects depending on data & configuration.
 
+</dd>
 
 <dd>HTML5 APIs and Canvas</dd>
 <dd>What are the new features and APIs in HTML5 ?</dd>
@@ -196,7 +216,24 @@ running tasks to be completed without preventing the page from becoming unrespon
 <strong>Ans</strong>
 Canvas is javascript api base & SVG is xml base
 Canvas performance is good as compare to SVG
-Canvas easily customizable & graphics optimize run time
+Canvas easily customizable & graphics optimize run time.
+
+You should use Canvas for:
+Interactive image editing: cropping, resizing, filters (think red eye removal, sepia, colorize, etc.)
+Generating raster graphics: data visualizations, data plots, rendering fractals, function plots.
+Image analysis: read pixels to gather data for histograms, color usage, and anything else you can imagine.
+Rendering game graphics, such as sprites and backgrounds.
+
+You should use SVG for:
+Resolution-independent Web application user interfaces.
+Highly interactive animated user interfaces.
+Data charts and plots.
+Vector image editing.
+
+paperjs, processingjs & raphaeljs supports canvas & svg
+
+for 3D - threejs
+
 </dd>
 
 
@@ -278,15 +315,27 @@ http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html
 
 </dd>
 
+<dd>About media query for iPad, iPhone, Desktop browsers ?</dd>
 
 
-How to create animation using CSS3 properties ?
+
+
+<dd>How to create animation using CSS3 properties ?
+Very Important - how to use it</dd>
+<dd>
+<strong>Ans</strong>
+</dd>
 
 
 HTML5 controls and new tags ?
+<dd>
+<strong>Ans</strong>
+</dd>
 
 
-Usage of modenizer to detect HTML5 features ?
+
+<dd>Usage of modenizer to detect HTML5 features ?</dd>
+Modernizer - It is a library which can detects HTML5 & CSS3 features in user browser. It helps in implementing workarounds of html5 features on non-supporting browsers.
 
 
 <dt>Responsive Web Design (RWD)</dt>
@@ -321,6 +370,12 @@ Responsive Design - https://www.responsys.com/blogs/nsm/cross-channel-marketing/
 For Video responsive - http://alistapart.com/article/creating-intrinsic-ratios-for-video
 </dd>
 
+<dd>What is Javascript Polyfills</dd>
+<dd>
+<strong>Ans</strong>
+If browser doesn't have any feature than polyfill provide alternative plugin to work.
+</dd>
+
 
 <dd>Why Mobile first for responsive design</dd>
 <dd>
@@ -344,29 +399,68 @@ and onto their (typically) more performant non-mobile counterparts.
 
 Respond.js - to support responsive layout for non-supportive browser - specially IE
 
-
 Nutshell - Mobile screens are small & easy to start work. Its easier as a developer to add more content after creating mobile design.
 </dd>
 
-About media query for iPad, iPhone, Desktop browsers ?
 
-What is bootstrap ?
+
+
+
+<dd>What is bootstrap ?</dd>
+<dd>
+<strong>Ans</strong>
+It is a commonly used library to create a responsive application.
+</dd>
+
 
 
 Frameworks -  jQuery/AngularJS/Backbone/RequireJS/ExtJS
 
+
 Framework specific questions ?
 How to make ajax calls using frameworks like jQuery/AngularJS/ExtJS ?
-What is MVC framework/pattern in UI development ?
-Comparison of frameworks and criteria for selection ?
+
+<dd>What is MVC framework/pattern in UI development ?</dd>
+<dd>
+<strong>Ans</strong>
+Purpose of MVC - Sepration of code based on functionalities like Models(Data Binding - Ajax Request), View (UI Component), Controller(Event Binding & Logic)
+</dd>
 
 
-Debugging/Troubleshooting Web Applications
+<dd>Comparison of frameworks and criteria for selection ?</dd>
+<dd>
+<strong>Ans</strong>
 
-How to debug web application ?
-How to optimize performance ?
-Cross browser compatibility issues and fixes ?
+</dd>
 
+
+<dt>Debugging/Troubleshooting Web Applications</dt>
+
+
+<dd>How to debug web application ?</dd>
+<dd>
+<strong>Ans</strong>
+1. Use of Firebug - Inspect Element
+2. Use of Breakpoint
+3. Developer Tools for IE
+</dd>
+
+<dd>How to optimize performance ?</dd>
+<dd>
+<strong>Ans</strong>
+1. Avoid use Global Variables
+2. caching of array length before looping
+3.
+
+
+</dd>
+
+
+<dd>Cross browser compatibility issues and fixes ?</dd>
+<dd>
+<strong>Ans</strong>
+
+</dd>
 </dl>
 
 

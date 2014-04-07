@@ -154,25 +154,86 @@ Design Pattern is a solution of a common problems
 
 <dd>HTML5 APIs and Canvas</dd>
 <dd>What are the new features and APIs in HTML5 ?</dd>
+<dd>
+<strong>Ans</strong>
 API - Application programming interface
+New Features
+1. Canvas
+2. File APIs(to access file)
+3. Local storage
+4. Web Socket
+5. Web Workers
+6. New HTML Controls(Date Picker, Calender, color picker)
 
+APIs
+1. Media APIs - There are a number of methods including play() and pause() as well as load() and canPlayType().
+2. Text Track API - The text track API leads on nicely from the media API. It is designed to allow us to interact
+with text tracks (subtitles or captions for example) for the audio and video elements.
+3. Drag and Drop - By adding a draggable attribute set to true, the user has the ability to move any element.
+You then add some event handlers on a target drop zone to tell the browser where the element can be dropped.
+4. Offline Web Applications/Application Cache - Application caching is carried out by creating a simple manifest file
+which lists the files that are required for the application to work offline.
+5. History APIs - The pre-HTML5 History API allowed us to send users forward or back, and check the length of the history.
+What HTML5 brings to the party are ways to add and remove entries in the user's history, hold data to restore a page state
+and update the URL without refreshing the page. The scripting is fairly straightforward and will help us build complex
+applications that don't refresh the page from which we can continue to share URLs as we've always done.
+6. Canvas 2D Context - allows us draw natively in the browser. Using canvas without the 2D Context API
+we wouldn't be able to draw. It's our brushes, palette and paint all rolled into one.
+7. Cross document and channel messaging — cross document messaging defines a way for documents to communicate with
+one-another regardless of their source domain without enabling cross-site attacks.
+8. Microdata — adds an additional layer of semantics to your documents from which search engines,
+browsers and more can use to extract information and provide an enhanced browsing experience.
+9. Web Workers — an API for running JavaScript in the background independent of any user scripts. Allows for long
+running tasks to be completed without preventing the page from becoming unresponsive
+10. Web Storage — a spec for storing client side data (key value pairs) similar to cookies
+11. Web Sockets — allows pages to use the WebSocket protocol to send two way messages between a browser and server.
+12. Server sent events — allows for push notifications to be sent from a server to a browser in the form of DOM events.
 
+</dd>
 
 <dd>Canvas vs SVG ?</dd>
+<dd>
+<strong>Ans</strong>
+Canvas is javascript api base & SVG is xml base
+Canvas performance is good as compare to SVG
+Canvas easily customizable & graphics optimize run time
+</dd>
 
-CSS
+
+<dt>CSS</dt>
 
 About CSS properties like - display, visibility, float, block vs inline-block
+
 CSS Hacks ?
+
 CSS pseudo classes ?
-What is Box Model ?
+
+
+<dd>What is Box Model ?</dd>
+<dd>
+<strong>Ans</strong>
+describes the rectangular boxes that are generated for elements laid out in the page. Essentially, everything is a rectangle.
+content - padding - border - margin
+Some interesting facts:
+1. border-radius rounds out the corners of this box
+2. box-shadow adds a shadow to this box
+3. outline and box-shadow aren't part of the box, and therefore have no effect on the layout
+
+Box-sizing - The box-sizing property gives you a little control around how boxes are sized within this model.
+The two possible values for box-sizing are content-box and border-box.
+
+
+</dd>
 
 
 CSS3/HTML5
 
 New features in HTML5/CSS3 ?
 What is media query ?
+
 How to create animation using CSS3 properties ?
+
+
 HTML5 controls and new tags ?
 Usage of modenizer to detect HTML5 features ?
 

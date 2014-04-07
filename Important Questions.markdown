@@ -229,19 +229,127 @@ The two possible values for box-sizing are content-box and border-box.
 CSS3/HTML5
 
 New features in HTML5/CSS3 ?
-What is media query ?
+
+
+
+<dd>What is media query ?</dd>
+<dd>
+<strong>Ans</strong>
+Media queries are an excellent way to deliver different styles to different devices, providing the best experience for
+each type of user. A part of the CSS3 specification, media queries expand the role of the media attribute that controls
+how your styles are applied. For example, it's been common practice for years to use a separate style sheet for printing
+web pages by specifying media="print" . Media queries take this idea to the next level by allowing designers to target
+styles based on a number of device properties, such as screen width, orientation, and so on. Figures 1–3 demonstrate media
+queries in action. They all show the same web page as viewed in a desktop browser, on a tablet, and on an iPod touch.
+
+Media queries are supported in Internet Explorer (IE) 9+, Firefox 3.5+, Safari 3+, Opera 7+, as well as on most modern
+smartphones and other screen-based devices. Although older versions of IE don't support media queries,
+you can—and should—start using them now.
+
+You can compose complex media queries using logical operators, including not, and, and only.
+
+Media features - Most media features can be prefixed with "min-" or "max-" to express "greater or equal to" or "less
+than or equal to" constraints.  This avoids using the "<" and ">" symbols, which would conflict with HTML and XML.
+
+Media features for setting conditions in media queries
+Feature	                Value	                    Min/Max	        Description
+width                   Length	                    Yes	            Width of display area
+height                  Length	                    Yes	            Height of display area
+device-width            Length	                    Yes	            Width of device
+device-height           Length	                    Yes	            Height of device
+orientation             portrait or landscape	    No	            Orientation of device
+aspect-ratio            Ratio (w/h)	                Yes	            Ratio of width to height, expressed as two integers
+                                                                    separated by a slash (e.g., 16/9)
+device-aspect-ratio     Ratio (w/h)	                Yes	            Ratio of device-width to device-height
+color                   Integer	                    Yes	            Number of bits per color component (if not color,
+                                                                    the value is 0)
+color-index             Integer	                    Yes	            Number of entries in the output device's color
+                                                                    lookup table
+monochrome              Integer	                    Yes	            Number of bits per pixel in the monochrome frame
+                                                                    buffer (if not monochrome, the value is 0)
+resolution              Resolution	                Yes	            Density of pixels of output device, express as
+                                                                    integer followed by dpi(dots/ per inch) or dpcm(dots per centimeter)
+scan                    progressive or interlace	No	            Scanning process used by TV devices
+grid                    0 or 1	                    No	            If set to 1, the device is grid-based, such as a
+                                                                    teletype terminal or phone display with only one
+                                                                    fixed font (all other devices are 0)
+
+http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html
+
+</dd>
+
+
 
 How to create animation using CSS3 properties ?
 
 
 HTML5 controls and new tags ?
+
+
 Usage of modenizer to detect HTML5 features ?
 
 
-Responsive Web Design (RWD)
+<dt>Responsive Web Design (RWD)</dt>
+<dd>What is responsive design ? Difference between Adaptive & Responsive</dd>
+<dd>
+<strong>Ans</strong>
+Responsive Design : True responsive design is fluid, using CSS3 media queries to respond to any screen sizes.
+With the use of this CSS3 module, you can create a flexible grid where text can wrap and images can shrink to adjust
+along with your browser. With responsive design, the use of media queries also opens up a range of options that allow
+for layouts
 
-What is responsive design ?
+Adaptive design : uses a series of static layouts based on breakpoints. For example, you may design a webpage at
+three different sizes: 320 for mobile phones, 760 pixels for tablets, and 960 for desktop browsers.
+Unlike responsive (where the design responds while you adjust a browser window), adaptive files don’t respond once
+they are loaded. It detects the device and calls up the properly sized layout to view.
+
+
+Conclusion: Responsive fluid design may give your user an optimal experience no matter what device they view the design in.
+It also allows for one HTML file to optimize for more than one environment. You may, however, have less control over
+how everything looks if you’re taking a fluid approach by using percentage based scaling.
+
+Tips
+- When designing adaptive, design for these six common screen widths: 320, 480, 760, 960, 1200 and 1600.
+- Media queries do not work in Internet Explorer 8 and below. Use a Javascript polyfill like CSS3-MediaQueries.js
+to support media queries in old legacy browsers. Consider though that polyfills can add to the file size and that
+Javascript can be turned off by users.
+- For flexible grid layouts in Responsive design use ems or percentages.  Avoid fixed widths.
+- In responsive design, use max-width:100% to make images, videos and HTML5 canvas scalable. As the viewports get
+smaller any media will scale down according to its container width. However, max-width does not work with embedded media.
+
+Responsive Design - https://www.responsys.com/blogs/nsm/cross-channel-marketing/difference-responsive-adaptive-web-design/
+For Video responsive - http://alistapart.com/article/creating-intrinsic-ratios-for-video
+</dd>
+
+
+<dd>Why Mobile first for responsive design</dd>
+<dd>
+<strong>Ans</strong>
+
+Mobile first, from a coding perspective, means that your base style is typically a single-column, fully-fluid layout.
+You use @media (min-width: whatever) to add a grid-based layout on top of that.
+
+The alternative – desktop first – involves starting with a wide, grid-based layout, and using @media (max-width: whatever)
+to scale down to a single-column layout.
+
+Why - Mobile first web design extends progressive enhancement to site layout, allowing you to serve simple,
+readable content to all devices, and layer on structure and presentation for more capable devices.
+
+Progressive enhancement essentially means adding more cool stuff (CSS & JavaScript, usually) as our device can handle it.
+It’s sort of the inverse to the concept of “graceful degradation,” which means that we start with all of our great
+functionality and design components, and remove them as needed for devices/browsers that can’t handle them.
+In terms of taking an approach to mobile first CSS, we can often achieve better performance on average by implementing
+a mobile first approach. Again, remember that we want to switch as much of the work as possible away from mobile devices
+and onto their (typically) more performant non-mobile counterparts.
+
+Respond.js - to support responsive layout for non-supportive browser - specially IE
+
+
+Nutshell - Mobile screens are small & easy to start work. Its easier as a developer to add more content after creating mobile design.
+</dd>
+
 About media query for iPad, iPhone, Desktop browsers ?
+
 What is bootstrap ?
 
 
@@ -320,3 +428,6 @@ prototype: extending or adding more functions to any object class
 
 
 </dd>
+
+
+<dd> use of grunt, css3 animation, require js, </dd>

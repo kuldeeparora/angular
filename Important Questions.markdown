@@ -324,6 +324,8 @@ http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html
 Very Important - how to use it</dd>
 <dd>
 <strong>Ans</strong>
+Add more css3 interview questions
+
 </dd>
 
 
@@ -450,6 +452,11 @@ Purpose of MVC - Sepration of code based on functionalities like Models(Data Bin
 <strong>Ans</strong>
 1. Avoid use Global Variables
 2. caching of array length before looping
+    a. Fix the Spacing - for (i = 0; i < anchors.length; i++) {  }
+    b. Localize Your Variable - for (var i = 0; i < anchors.length; i++) { }
+    c. Don’t Use the Increment Operator - for (var i = 0; i < anchors.length; i += 1) { }
+    d. Don’t Calculate the Length on Each Iteration - for (var i = 0, j = anchors.length; i < j; i += 1) {  }
+
 3.
 
 
@@ -461,6 +468,11 @@ Purpose of MVC - Sepration of code based on functionalities like Models(Data Bin
 <strong>Ans</strong>
 
 </dd>
+
+<dt>Testing</dt>
+
+
+
 </dl>
 
 

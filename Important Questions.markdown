@@ -258,14 +258,92 @@ Some interesting facts:
 
 Box-sizing - The box-sizing property gives you a little control around how boxes are sized within this model.
 The two possible values for box-sizing are content-box and border-box.
-
-
 </dd>
+
+
+<dd>Why SASS</dd>
+<dd>
+<strong>Ans</strong>
+SASS is CSS preprocessors. It is an abstraction layer on top of CSS. It is a special syntax/language that compile down into CSS.
+SASS make managing CSS easier, with things like variables and mixins to handle vendor prefixes (among other things).
+SASS make doing best practices easier, like concatenating and compressing CSS.
+</dd>
+
+
+<dd>What is normalise css</dd>
+<dd>
+<strong>Ans</strong>
+Normalize you might call a CSS reset alternative. Instead of wiping out all styles, it delivers a set of reasonable defaults.
+It doesn't unset things that are already consistent across browsers and reasonable (e.g. bold headers). In that way it does
+some less than a reset. It also does some more than a reset in that it handles quirks you may never consider, like HTML5
+audio element inconsistencies or line-height inconsistencies when you use sub and sup elements.
+</dd>
+
+
+<dd>What are the various techniques for clearing floats?</dd>
+<dd>
+<strong>Ans</strong>
+1. Use a clearfix (bonus points for micro clearfix).
+2. Float the parent as well.
+3. Use an overflow property other than "visible" on the parent (bonus points for listing downsides like cutting off shadows).
+</dd>
+
+
+<dd>compare using inline-block and floats for building a grid.</dd>
+<dd>
+<strong>Ans</strong>
+With inline block you need to deal with the whitespace issue. With floats you need to deal with clearing.
+</dd>
+
+
+<dd>What are sprites and why would use them? </dd>
+<dd>
+<strong>Ans</strong>
+Sprites are essentially multiple images combined into one. Performance is the reason that they are used.
+Generally speaking, the slowest thing a website can do is request a resource. The fewer requests a site needs to make,
+the faster it is. Fast = good. Combining what would be many requests into one = good.
+</dd>
+
+
+<dd>What is the difference between inline, inline-block, and block?</dd>
+<dd>
+<strong>Ans</strong>
+the fact that you can't transform inline elements.
+</dd>
+
+<dd>What tools do you use for cross-browser testing?</dd>
+<dd>
+<strong>Ans</strong>
+They should have some kind of strategy. Perhaps a web based tool like BrowserStack.
+Perhaps a VM based tool like Virtual Box. Perhaps different actual computers.
+</dd>
+
+<dd>Backface - visibility</dd>
+<dd>
+<strong>Ans</strong>
+The backface-visibility property relates to 3D transforms. With 3D transforms, you can manage to rotate an element so
+what we think of as the "front" of an element no longer faces the screen. For instance, this would flip an element away from the screen:
+the default for backface-visibility is visible. Instead of it being visible, you could hide it.
+</dd>
+
+<dd></dd>
+<dd>
+<strong>Ans</strong>
+</dd>
+
+
+<dd>KeyFrame Animatiom</dd>
+<dd>
+<strong>Ans</strong>
+It is a frame based animation. The animation gradually change from current style to the new style.
+</dd>
+
 
 
 CSS3/HTML5
 
 New features in HTML5/CSS3 ?
+
 
 
 
@@ -344,6 +422,11 @@ Modernizer - It is a library which can detects HTML5 & CSS3 features in user bro
 <dd>What is responsive design ? Difference between Adaptive & Responsive</dd>
 <dd>
 <strong>Ans</strong>
+It's about making websites work wherever the web is. Different devices with different sizes and different capabilities.
+Responsive design is about taking one code base and making it work for all of them. Part of that is media queries and
+different visuals. Part of that is different resources (e.g. different JavaScript to handle touch vs click or different
+images to accommodate the screen).
+
 Responsive Design : True responsive design is fluid, using CSS3 media queries to respond to any screen sizes.
 With the use of this CSS3 module, you can create a flexible grid where text can wrap and images can shrink to adjust
 along with your browser. With responsive design, the use of media queries also opens up a range of options that allow
@@ -459,6 +542,16 @@ Purpose of MVC - Sepration of code based on functionalities like Models(Data Bin
 
 3.
 
+
+</dd>
+
+<dd>Difference between call & apply</dd>
+<dd>
+<strong>Ans</strong>
+The apply() method is identical to call(), except apply() requires an array as the second parameter. The array represents the arguments for the target method."
+function f(message) { ... }
+f.call(receiver, "test");
+f.apply(receiver, ["test"]);
 
 </dd>
 

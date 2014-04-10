@@ -260,6 +260,29 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
 </dd>
 
 
+<dd>Writing efficient CSS</dd>
+<dd>
+<strong>Ans</strong>
+The style system breaks rules up into four primary categories:
+
+ID Rules
+Class Rules
+Tag Rules
+Universal Rules
+
+
+Guidelines for efficient CSS
+1. Avoid universal rules
+2. Don’t qualify ID rules with tag names or classes - (button#backButton, .menu-left#newMenuIcon)
+3. Don’t qualify class rules with tag names - (treecell.indented)
+4. Use the most specific category possible - (.treecell-mailfolder)
+5. Avoid the descendant selector - (treehead treerow treecell {...})
+6. Tag category rules should never contain a child selector (treehead > treerow > treecell {…})
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
+</dd>
+
+
 <dd>What is border-collapse</dd>
 <dd>
 <strong>Ans</strong>
@@ -394,9 +417,27 @@ display: table-cell
 
 </dd>
 
-<dd></dd>
+<dd>CSS Counters</dd>
 <dd>
 <strong>Ans</strong>
+CSS counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many
+times they're used. This lets you adjust the appearance of content based on its placement in the document. CSS counters
+are an implementation of Automatic counters and numbering in CSS 2.1.
+
+<pre>
+body {
+  counter-reset: section;           /* Set the section counter to 0 */
+}
+h3:before {
+  counter-increment: section;      /* Increment the section counter */
+  content: "Section " counter(section) ": "; /* Display the counter */
+}
+
+<h3>Introduction</h3>
+<h3>Body</h3>
+<h3>Conclusion</h3>
+</pre>
+https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters
 </dd>
 
 <dd></dd>
@@ -499,14 +540,6 @@ what we think of as the "front" of an element no longer faces the screen. For in
 the default for backface-visibility is visible. Instead of it being visible, you could hide it.
 </dd>
 
-<dd>KeyFrame Animatiom</dd>
-<dd>
-<strong>Ans</strong>
-It is a frame based animation. The animation gradually change from current style to the new style.
-</dd>
-
-
-
 CSS3/HTML5
 
 New features in HTML5/CSS3 ?
@@ -569,10 +602,90 @@ http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.html
 Very Important - how to use it</dd>
 <dd>
 <strong>Ans</strong>
-Add more css3 interview questions
+CSS animations make it possible to animate transitions from one CSS style configuration to another. Animations consist
+of two components, a style describing the CSS animation and a set of keyframes that indicate the start and end states of
+the animation's style, as well as possible intermediate waypoints along the way.
 
+Advantages
+1. They're easy to use for simple animations; you can create them without even having to know JavaScript.
+2. The animations run well, even under moderate system load. Simple animations can often perform poorly in
+JavaScript (unless they're well made). The rendering engine can use frame-skipping and other techniques to keep the
+performance as smooth as possible.
+3. Letting the browser control the animation sequence lets the browser optimize performance and efficiency by,
+for example, reducing the update frequency of animations running in tabs that aren't currently visible.
+
+The sub-properties of the animation property are:
+1. animation-delay
+2. animation-direction
+3. animation-duration
+4. animation-iteration-count
+5. animation-name
+6. animation-play-state
+7. animation-timing-function
+8. animation-fill-mode
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations
 </dd>
 
+
+
+<dd>KeyFrame Animatiom</dd>
+<dd>
+<strong>Ans</strong>
+It is a frame based animation. The animation gradually change from current style to the new style.
+
+<pre>
+h1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+</pre>
+</dd>
+
+
+<dd>CSS Transform</dd>
+<dd>
+<strong>Ans</strong>
+CSS transforms change the position and shape of the affected content without disrupting the normal document flow.
+
+transform-origin - Specifies the position of the origin. By default it is at the center of the element and can be moved.
+It is used by several transforms, like rotations, scaling or skewing, that need a specific point as parameter.
+
+transform - Specifies the transforms to apply to the element. It is a space separated list of transform, which are
+applied one after the other, as requested by the composition operation.
+
+<pre>
+<div style="transform: skewx(10deg) translatex(150px);
+            transform-origin: bottom left;">
+  <iframe src="http://www.google.com/" width="600" height="500"></iframe>
+</div>
+</pre>
+
+3D specific CSS properties
+
+Setting up a perspective - The first element to set is the perspective. The perspective is what gives the 3D impression.
+The farther from the viewer the elements are, the smaller they are.
+
+perspective-origin:-50px -50px;
+perspective-origin:50% 50%;
+
+
+http://desandro.github.io/3dtransforms/
+</dd>
 
 HTML5 controls and new tags ?
 <dd>

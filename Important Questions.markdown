@@ -493,7 +493,17 @@ audio element inconsistencies or line-height inconsistencies when you use sub an
 
 <dd>What is doctype</dd>
 <dd><strong>Ans</strong>
+The term DOCTYPE tells the browser which type of HTML is used on a webpage. In turn, the browsers use DOCTYPE to
+determine how to render a page. Failing to use DOCTYPE or using a wrong DOCTYPE may load your page in Quirks Mode
+
+New Doctype : Instead of typing out a ridiculously long DOCTYPE statement to tell the browser how to render your webpage,
+this long line of code has been truncated to <!doctype html>.
 </dd>
+
+What’s the difference between standards mode and quirks mode?
+Quirks Mode is a default compatibility mode and may be different from browser to browser, which may result to a lack of
+consistency in appearance from browser to browser.
+
 
 <dd>What are the various techniques for clearing floats?</dd>
 <dd><strong>Ans</strong>
@@ -692,6 +702,13 @@ HTML5 controls and new tags ?
 <strong>Ans</strong>
 article, aside, figure, figcaption, nav, footer, header, svg, canvas, section,
 </dd>
+
+What elements have disappeared?
+As mentioned above, <frame> and <frameset> have been eliminated. Other elements that are no longer supported include: <noframe>, <applet>, <bigcenter> and <basefront>.
+
+What are some new input attributes in HTML5?
+There are many new form elements including: datalist, datetime, output, keygen, date, month, week, time, number, range, email, and url.
+
 
 <dd>HTML5 APIs and Canvas</dd>
 <dd>What are the new features and APIs in HTML5 ?</dd>

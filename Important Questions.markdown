@@ -500,9 +500,75 @@ New Doctype : Instead of typing out a ridiculously long DOCTYPE statement to tel
 this long line of code has been truncated to <!doctype html>.
 </dd>
 
-What’s the difference between standards mode and quirks mode?
+<dd>What’s the difference between standards mode and quirks mode?</dd>
+<dd><strong>Ans</strong>
 Quirks Mode is a default compatibility mode and may be different from browser to browser, which may result to a lack of
 consistency in appearance from browser to browser.
+</dd>
+
+<dd>What are the limitations when serving XHTML pages?</dd>
+<dd><strong>Ans</strong>
+Perhaps the biggest issue is the poor browser support XHTML currently enjoys. Internet Explorer and a number of other
+user agents cannot parse XHTML as XML. Thus, it is not the extensible language it was promised to be.
+</dd>
+
+<dd>What kind of things must you be wary of when design or developing for multilingual sites?</dd>
+<dd><strong>Ans</strong>
+1. set the primary language <html  lang="en" xml:lang="en">
+2.If you wanted to include a passage in French on your page you would need to use the ‘lang’ attribute to mark the change
+in language. The ‘lang’ attribute can be used with almost every HTML element, making it very easy to change languages
+within a page. To include a French quotation on an English page you would simply add the lang attribute to the blockquote tag:
+<pre>
+<blockquote lang=”fr”>
+
+<p>Le plus grand faible des hommes, c'est l'amour qu'ils ont de la vie.</p>
+
+</blockquote>
+</pre>
+3. link - <a href="" lang="fr" hreflang="fr">Francais</a>
+4. In order to make language identification easier for Google, Google recommends only using one language per page.
+5. Language direction - <html dir="rtl">
+6. Character encoding - <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+7. Font sizes -
+<pre>
+HTML
+<html lang="en"> or <html lang="zh">
+CSS
+:lang(en) {
+font-size: 85%;
+font-family: arial, verdana, sans-serif;
+}
+:lang(zh) {
+font-size: 125%;
+font-family: helvetica, verdana, sans-serif;
+}
+</pre>
+This technique is supported in Firefox, Opera and Internet Explorer 8 and higher. Chrome and Safari do not support this
+pseudo class.
+
+If you want to support web-kit browsers and earlier versions of Internet Explorer as well, the second option would be to
+use classes on the body element for each language required:
+<pre>
+HTML
+<body class="english"> or <body class="chinese">
+CSS
+.english {
+font-size: 85%;
+font-family: arial, verdana, sans-serif;
+}
+.chinese {
+font-size: 125%;
+font-family: helvetica, verdana, sans-serif;
+}
+</pre>
+http://www.nomensa.com/blog/2010/7-tips-and-techniques-for-multi-lingual-website-accessibility/
+</dd>
+
+<dd>What are data- attributes good for?</dd>
+<dd><strong>Ans</strong>
+The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or
+private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
+</dd>
 
 
 <dd>What are the various techniques for clearing floats?</dd>
@@ -868,12 +934,76 @@ Frameworks -  jQuery/AngularJS/Backbone/RequireJS/ExtJS
 Framework specific questions ?
 How to make ajax calls using frameworks like jQuery/AngularJS/ExtJS ?
 
+<dd>chaining</dd>
+<dd><strong>Ans</strong>
+<pre>
+​$(document).ready(function(){
+    $('#dvContent').addClass('dummy')
+          .css('color', 'red')
+          .fadeIn('slow');
+});​
+</pre>
+</dd>
+
+
+<dd>Deferred</dd>
+<dd><strong>Ans</strong>
+the Deferred object provides a way to register multiple callbacks into self-managed callback queues, invoke callback
+queues as appropriate, and relay the success or failure state of any synchronous or asynchronous function.
+<pre>
+$.get("test.php").done(
+    function(){ alert("$.get succeeded"); }
+);
+
+$.get("test.php")
+    .done(function(){ alert("$.get succeeded"); })
+    .fail(function(){ alert("$.get failed!"); });
+</pre>
+
+And it seems that the existing ajax() method callbacks can be chained rather than declared in the settings:
+<pre>
+var jqxhr = $.ajax({ url: "example.php" })
+    .success(function() { alert("success"); })
+    .error(function() { alert("error"); })
+    .complete(function() { alert("complete"); });
+</pre>
+</dd>
+
+
+<dd>.end()</dd>
+<dd><strong>Ans</strong>
+<pre>
+$('.tree')
+    .find('.branch')
+        .find('.leaf')
+        .addClass('tacks-onto-leaf')
+        .end()
+    .addClass('tacks-onto-branch')
+    .end()
+.addClass('tacks-onto-tree');
+</pre>
+</dd>
+
+
+<dd>queue()</dd>
+<dd><strong>Ans</strong>
+Queues in jQuery are used for animations. You can use them for any purpose you like. They are an array of functions
+stored on a per element basis, using jQuery.data(). They are First-In-First-Out (FIFO). You can add a function to the
+queue by calling .queue(), and you remove (by calling) the functions using .dequeue().
+
+The default queue in jQuery is fx. The default queue has some special properties that are not shared with other queues.
+
+1. Auto Start: When calling $(elem).queue(function(){}); the fx queue will automatically dequeue the next function and run
+it if the queue hasn't started.
+2. 'inprogress' sentinel: Whenever you dequeue() a function from the fx queue, it will unshift() (push into the first
+location of the array) the string "inprogress" - which flags that the queue is currently being run.
+3. It's the default! The fx queue is used by .animate() and all functions that call it by default.
+</dd>
 
 
 <dd>Design Patterns</dd>
 <dd>What is design pattern ?</dd>
-<dd>
-<strong>Ans</strong>
+<dd><strong>Ans</strong>
 Design Pattern is a solution of a common problems
 </dd>
 
@@ -955,7 +1085,26 @@ Modules
     b. Localize Your Variable - for (var i = 0; i < anchors.length; i++) { }
     c. Don’t Use the Increment Operator - for (var i = 0; i < anchors.length; i += 1) { }
     d. Don’t Calculate the Length on Each Iteration - for (var i = 0, j = anchors.length; i < j; i += 1) {  }
-3.
+3. Use Efficient CSS Selectors
+4. Put CSS in document Head
+5. Leverage browser caching - Setting an expiry date or a maximum age in the HTTP headers for static resources instructs
+the browser to load previously downloaded resources from local disk rather than over the network.
+6. Minimize redirect
+7. Minimize DNS looksups
+8. Avoid bad requests
+9. Combine external JS & CSS
+10. Optimize Images & Combine images using css sprites
+11. Optimize the order of styles & scripts
+12. Avoid CSS @import
+13. Avoid document.write
+14. Minimize Request Size - Keeping cookies and request headers as small as possible ensures that an HTTP request can fit into a single packet.
+15. Enable compression
+16. Remove unused CSS
+17. Minify CSS & JS
+18. Specify Image dimensions
+
+https://developers.google.com/speed/docs/best-practices/rtt
+
 </dd>
 
 
@@ -1050,10 +1199,20 @@ Class(function) : is generic(includes property & method) definition of object.
 prototype is default property of class to add more methods(functions).
 
 prototype: extending or adding more functions to any object class
-
-
-
 </dd>
 
 
-<dd> use of grunt, css3 animation, require js, </dd>
+<dd> Scrum </dd>
+<dd>
+standup - daily scrum
+calculate story points - scrum poker - do check velocity - scale point achieve - if anyone on leave then plan next sprint accordingly
+retro
+end of sprint - demo
+story point calculate fibonacci
+Small Releases
+Story Board: ToDo, Progress, Review, Done
+</dd>
+
+
+<dd>Jquery</dd>
+<dd>http://code.tutsplus.com/tutorials/20-helpful-jquery-methods-you-should-be-using--net-10521</dd>

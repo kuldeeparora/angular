@@ -1000,6 +1000,16 @@ location of the array) the string "inprogress" - which flags that the queue is c
 3. It's the default! The fx queue is used by .animate() and all functions that call it by default.
 </dd>
 
+<dd>eq() vs get()</dd>
+<dd><strong>Ans</strong>
+.get() and .eq() both return a single "element" from a jQuery object array, but they return the single element in different forms.
+
+.eq() returns it as a jQuery object, meaning the DOM element is wrapped in the jQuery wrapper, which means that it accepts jQuery functions.
+
+.get() return a raw DOM element. You may manipulate it by accessing its attributes and invoking its functions as you
+would on a raw DOM element. But it loses its identity as a jQuery-wrapped object, so a jQuery function like .fadeIn won't work.
+
+</dd>
 
 <dd>Design Patterns</dd>
 <dd>What is design pattern ?</dd>

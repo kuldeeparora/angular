@@ -95,6 +95,11 @@ With the help of namespace we can define the scope of functions & variables.
 A variable which is defined outside of the function scope is called global variable.
 </dd>
 
+<dd>How to find global variable in page</dd>
+<dd>
+Type : Object.keys(window); in console to find global variable in page.
+</dd>
+
 <dd>What is function closure ?</dd>
 <dd><strong>Ans</strong>
 Scoping references & variables of any function to avoid conflicts from global namespace
@@ -1226,3 +1231,6 @@ Story Board: ToDo, Progress, Review, Done
 
 <dd>Jquery</dd>
 <dd>http://code.tutsplus.com/tutorials/20-helpful-jquery-methods-you-should-be-using--net-10521</dd>
+
+<dd>Google Style Guide</dd>
+<dd>https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml</dd>

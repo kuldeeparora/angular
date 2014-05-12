@@ -567,16 +567,6 @@
     clear: both;
 }
 
-.internal-block {
-    /*margin: 0 5px 5px;*/
-    /*padding: 10px;*/
+#task input[type="text"] {
+    height: 27px;
 }
-
-/*.internal-block [type=password] {*/
-    /*width: 20px;*/
-    /*height: 30px;*/
-    /*margin: 5px;*/
-    /*font-size: large;*/
-    /*text-align: center;*/
-/*}*/
-

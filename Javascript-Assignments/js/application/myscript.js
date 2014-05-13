@@ -117,21 +117,22 @@ function submitForm() {
         password[0].style.background = '#fff';
     }
 
-    if(!validUserName && !validName && !validLastName && !validAge && !validEmail && !(passwordLength < 6)){
+    if (!validUserName && !validName && !validLastName && !validAge && !validEmail && !(passwordLength < 6)) {
         if (window.XMLHttpRequest) {
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     var data = JSON.parse(xmlhttp.responseText);
                     var ul = document.getElementById('showData');
-                    for(var i = 0; i < data.length; i++){
-                        var li = document.createElement('li');x
+                    for (var i = 0; i < data.length; i++) {
+                        var li = document.createElement('li');
+                        x
                         var span = document.createElement('span');
-                        li.setAttribute('class', 'class-day'+i);
+                        li.setAttribute('class', 'class-day' + i);
                         li.appendChild(document.createTextNode(data[i].day));
                         ul.appendChild(li);
-                        for(var j =0; j < data[i].content.length; j++){
-                            span.setAttribute('class', 'class-time'+i);
+                        for (var j = 0; j < data[i].content.length; j++) {
+                            span.setAttribute('class', 'class-time' + i);
                             span.appendChild(document.createTextNode(data[i].content[j].time))
                             li.appendChild(span);
                         }
@@ -143,7 +144,35 @@ function submitForm() {
         }
         console.log('all ok');
     }
-
 }
 
 
+// Looking for a property
+var star = {};
+function Star(constell, type, specclass, magnitude) {
+    this.constellation = constell;
+    this.type = type;
+    this.spectralClass = specclass;
+    this.mag = magnitude;
+}
+star["Polaris"] = new Star("Ursa Minor", "Double/Cepheid", "F7", 2.0);
+star["Mizar"] = new Star("Ursa Major", "Spectroscopic Binary", "A1 V", 2.3);
+star["Aldebaran"] = new Star("Taurus", "Irregular Variable", "K5 III", 0.85);
+star["Rigel"] = new Star("Orion", "Supergiant with Companion", "B8 Ia", 0.12);
+
+if ("Polaris" in star) {
+    star["Polaris"].aka = "The North Star";
+    console.log("Polaris found and is also known as " + star["Polaris"].aka);
+}
+for (var element in star) {
+    if ("aka" in star[element]) {
+        console.log(element + " is in " + star[element].constellation);
+    }
+}
+
+
+for (var element in star) {
+    for (var propt in star[element]) {
+        console.log(element + ": " + propt + " = " + star[element][propt]);
+    }
+}

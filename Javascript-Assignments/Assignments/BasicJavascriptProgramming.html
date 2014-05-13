@@ -7,93 +7,369 @@
 	<link href="../css/forum-styles.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="displayNumber" class="basic-grey">
-	<h1>Basic Javascript Programming</h1>
+<div id="displayNumber" class="basic-grey" style="width: 600px">
+<h1>Basic Javascript Programming</h1>
+<ul>
+<li>Operators
 	<ul>
-		<li>Operators
-			<ul>
-				<li>Math</li>
-				<li>Conditional</li>
-				<li>Logical</li>
-				<li>Bitwise Operators</li>
-				<li>Type Operators</li>
-			</ul>
+		<li>Additive(+,-)
+			<span>The term additive operators includes both addition(+) and subtraction(-) operators</span>
 		</li>
-		<li>Data Types</li>
-		<li>Functions & Event Binding</li>
-		<li>Javascript API - Math, Date, Array, RegExp
-			http://www.w3schools.com/jsref/default.asp
+		<li>Multiplicative(*, /)
+			<span>they perform multiplication(*) and division(/)</span>
 		</li>
+		<li>Equality(==, ===, !=, !==)
+			<span>You use equality operators to test whether two expressions are the same or different. </span>
+		</li>
+		<li>Relational(>, <, >=, <=, in, instanceof)
+			<span>Relational operators test expressions to find out whether they are greater than or less than each other, or whether a given value is in a list or is an instance of a certain type. </span>
+			<br><br><span>defining "in"</span>
+<pre>
+var myObj = {
+	star: "Algol",
+	constellation: "Perseus"
+};
+if ("star" in myObj) {
+		alert("There is a property called star in this object");
+}
+</pre>
+
+			<br>
+			<span>defining "instanceof"</span>
+<pre>
+var myDate = new Date();
+  if (myDate instanceof Date) {
+		  //do something
+}
+</pre>
+
+		</li>
+		<li>Unary(delete, void, typeof, ++, --, +, -, ~, !)
+			<span>Unary operators have a single operand or work with a single expression in JavaScript. </span>
+			<br>
+			<span>++ and -- operators to increment and decrement a number</span>
+<pre>
+var aNum = 4;
+var y = aNum++;  // y now has the value 4, but aNum then has the value 5
+The second example is prefixing:
+var aNum = 4;
+var y = ++aNum;  // y now has the value 5, as does aNum
+</pre>
+			<span>Converting to a number with the plus sign</span>
+<pre>
+var x = +"43";
+This code results in the string “43” being converted to a number by JavaScript <br>and the numeric value 43 being stored in the variable x.
+</pre>
+
+			<span>Using the delete operator</span>
+<pre>
+var myArray = ["The RCMP", "The Police", "State Patrol"];
+delete myArray[0];  // myArray now contains only "The Police" and "State Patrol"
+The preceding code creates an array called myArray and then promptly deletes the <br>value at the first index, making it “undefined.”
+</pre>
+			<span>the typeof operator</span>
+<pre>
+var polaris = new Object;
+polaris.constellation = "Ursa Minor";
+alert(typeof polaris.constellation);
+</pre>
+
+		</li>
+		<li>Assignment
+<pre>
+
+*= Multiplies the left operand by the right operand
+/= Divides the left operand by the right operand
+%= Provides the division remainder (modulus) of the left and
+right operand
++= Adds the right operand to the left operand
+-= Subtracts the right operand from the left operand <<= Bitwise left shift
+>>= Bitwise right shift
+>>>= Bitwise unsigned right shift
+&= Bitwise AND
+^= Bitwise XOR
+|= Bitwise OR
+</pre>
+		</li>
+		<li>Bitwise Operators(&, |, ^, ~, <<, >>, >>>)
+			<span>Bitwise operators include AND(&), OR(|), XOR(^), NOT(~), Shift Left(<<), Shift Right With Sign(>>), and Shift Right With Zero Fill(>>>)</span>
+			<br>
+			<span>negating with bitwise not and logical not</span>
+<pre>
+Bitwise AND	a & b	Returns a one in each bit position for which the <br>corresponding bits of both operands are ones.
+Bitwise OR	a | b	Returns a one in each bit position for which the <br>corresponding bits of either or both operands are ones.
+Bitwise XOR	a ^ b	Returns a one in each bit position for which the <br>corresponding bits of either but not both operands are ones.
+Bitwise NOT	~ a	Inverts the bits of its operand.
+Left shift	a << b	Shifts a in binary representation b (< 32) bits to <br>the left, shifting in zeros from the right.
+Sign-propagating right shift	a >> b	Shifts a in binary representation <br>b (< 32) bits to the right, discarding bits shifted off.
+Zero-fill right shift	a >>> b	Shifts a in binary representation b (< 32) bits<br> to the right, discarding bits shifted off, and shifting in zeros from the left.
+</pre>
+
+
+		</li>
+		<li>The comma operator<span>(var num1=3, num2=7, num3=10;)</span></li>
 	</ul>
+</li>
+<li>Conditional Statements
 	<ul>
-		<li> Common Scripting & Web Development
+		<li>if statements
+<pre>if (some condition) {
+// do something here
+}</pre>
+		</li>
+		<li>Compound conditions
+<pre>
+if ((inputNum < 51 ) || (inputNum > 99)) {
+alert("That number, " + inputNum + ", is not between 50 and 100.");
+}
+</pre>
+		</li>
+		<li>Using else if and else statements
+<pre>
+if (isNaN(inputNum)) {
+       alert(inputNum + " doesn't appear to be a number.");
+   }
+   else if ((inputNum > 99) || (inputNum < 51)) {
+       alert("That number, " + inputNum + ", is not between 50 and 100.");
+   }
+   else {
+       alert("You entered a number: " + inputNum);
+}
+</pre>
+		</li>
+		<li>ternary conditionals
+<pre>
+var greeting = (name == "steve") ? "Hello Steve" : "Hello Unknown Person";
+alert(greeting);
+
+if (name == "steve") {
+          var greeting = "Hello Steve";
+}
+else {
+          var greeting = "Hello Unknown Person";
+      }
+alert(greeting);
+</pre>
+		</li>
+		<li>Switch Statements
+<pre>
+if (languageChoice == "en") {
+    // Language is English, execute code for English.
+}
+else if (languageChoice == "de") {
+    // Language is German, execute code for German.
+}
+else if (languageChoice == "pt") {
+    // Language is Portuguese, execute code for Portuguese.
+}
+else {
+    // Language not chosen, use Swedish.
+}
+
+
+switch(languageChoice) {
+    case "en":
+        // Language is English, execute code for English.
+        break;
+    case "de":
+        // Language is German, execute code for German.
+        break;
+    case "pt":
+        // Language is Portuguese, execute code for Portuguese.
+        break;
+    default:
+        // Language not chosen, use Swedish.
+// Back to code outside the switch statement
+
+</pre>
+		</li>
+		<li>Looping with while
+			<br>
+			<span>The while statement</span>
+<pre>
+var count = 0;
+      while (count < 10) {
+          // Do something in here.
+          // Multiple lines are fine.
+          // Don't forget to increment the counter:
+          count++;
+}
+</pre>
+
+			<br>
+			<span>The do...while statement</span>
+<pre>
+var count = 0;
+do {
+    alert("Count is " + count);
+count++; }
+while (count < 3);
+</pre>
+		</li>
+		<li>Using for loops
 			<ul>
-				<li>HTML Controls & Form Validation
+				<li>The for loop
+<pre>
+var myArray = ["Vega","Deneb","Altair"];
+var arrayLength = myArray.length;
+for (var count = 0; count < arrayLength; count++ ) {
+         alert(myArray[count]);
+     }
+</pre>
+				</li>
+				<li>For in Loop
+<pre>
+var star = new Object;
+   star.name = "Polaris";
+   star.type = "Double/Cepheid";
+   star.constellation = "Ursa Minor";
+   for (var starProp in star) {
+	   alert(starProp + " = " + star[starProp]);
+	}
+</pre>
+				</li>
+				<li>The for each...in loop
+<pre>
+var star = new Object;
+star.name = "Polaris";
+star.type = "Double/Cepheid";
+star.constellation = "Ursa Minor";
+for each (var starValue in star) {
+	alert(starValue + " is in the star object.");
+}
+</pre>
+				</li>
+			</ul>
+
+		</li>
+
+	</ul>
+</li>
+<li>Data Types</li>
+<li>Functions & Event Binding</li>
+<li>Javascript API - Math, Date, Array, RegExp
+	http://www.w3schools.com/jsref/default.asp
+</li>
+</ul>
+<ul>
+	<li> Common Scripting & Web Development
+		<ul>
+			<li>HTML Controls & Form Validation
+				<ul>
+					<li>
+						HTML Controls: text, textarea, radio, checkbox, button, select
+					</li>
+					<li>
+						Form Validations : Required, Numeric, Password, Length, Format(Email, URL, Postcode etc)
+					</li>
+				</ul>
+			</li>
+			<li>DOM Manipulation
+				<ul>
+					<li> Accessing & Modifying HTML Elements
+						- document.getElementById()
+						- document.getElementByTagName()
+						- document.getElementByClassName()
+						- document.querySelector('CSS Selector')
+					</li>
+					<li>HTML Element</li>
+				</ul>
+			</li>
+			<li>AJAX Requests - XMLHttpRequest Object</li>
+		</ul>
+	</li>
+</ul>
+
+<br>
+<br>
+<hr/>
+<div>
+	<h2>Working of Basic JS Programming</h2>
+
+	<p>You’ll find programming in JavaScript much easier if you use semicolons as a rule rather than trying to
+		remember where you might not have to use them.</p>
+
+	<p>When opening a loop or function, skip the semicolons.</p>
+
+	<p>Placing JavaScript in an external file has several advantages, including the following:</p>
+	<ul>
+		<li>Separation of code from markup</li>
+		<li>Easier maintenance</li>
+		<li>Caching</li>
+	</ul>
+
+	<p>There are 6 primitive types of datatypes</p>
+	<ul>
+		<li>Numbers</li>
+		<li>Strings</li>
+		<li>Booleans</li>
+		<li>Null</li>
+		<li>Undefined</li>
+		<li>Objects</li>
+	</ul>
+
+	<p>reference data types</p>
+	<ul>
+		<li>Array</li>
+		<li>Date</li>
+		<li>RegExp</li>
+	</ul>
+
+	<ul>
+		<li class="objects-li">Objects
+			<ul>
+				<li>Navigator
 					<ul>
-						<li>
-							HTML Controls: text, textarea, radio, checkbox, button, select
-						</li>
-						<li>
-							Form Validations : Required, Numeric, Password, Length, Format(Email, URL, Postcode etc)
+						<li>Mimetype</li>
+						<li>Window
+							<ul>
+								<li>Frame</li>
+								<li>History</li>
+								<li>Location</li>
+								<li>Document
+									<ul>
+										<li>Anchor</li>
+										<li>Applet</li>
+										<li>Area</li>
+										<li>Image</li>
+										<li>Link</li>
+										<li>Plugin</li>
+										<li>Form
+											<ul>
+												<li>Button</li>
+												<li>Checkbox</li>
+												<li>FileUpload</li>
+												<li>Hidden</li>
+												<li>Option</li>
+												<li>Password</li>
+												<li>Radio</li>
+												<li>Reset</li>
+												<li>Select</li>
+												<li>Submit</li>
+												<li>Text</li>
+												<li>Text Area</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>
-				<li>DOM Manipulation
-					<ul>
-						<li> Accessing & Modifying HTML Elements
-							- document.getElementById()
-							- document.getElementByTagName()
-							- document.getElementByClassName()
-							- document.querySelector('CSS Selector')
-						</li>
-						<li>HTML Element</li>
-					</ul>
-				</li>
-				<li>AJAX Requests - XMLHttpRequest Object</li>
 			</ul>
 		</li>
 	</ul>
 
-	<br>
-	<br>
-	<hr/>
-	<div>
-		<h2>Working of Basic JS Programming</h2>
+	<ul>
+		<li>
 
-		<p>You’ll find programming in JavaScript much easier if you use semicolons as a rule rather than trying to
-			remember where you might not have to use them.</p>
+		</li>
+	</ul>
+	<p id="dateField">&nbsp;</p>
 
-		<p>When opening a loop or function, skip the semicolons.</p>
+	<p id="dateField1">&nbsp;</p>
 
-		<p>Placing JavaScript in an external file has several advantages, including the following:</p>
-		<ul>
-			<li>Separation of code from markup</li>
-			<li>Easier maintenance</li>
-			<li>Caching</li>
-		</ul>
-
-		<p>There are 6 primitive types of datatypes</p>
-		<ul>
-			<li>Numbers</li>
-			<li>Strings</li>
-			<li>Booleans</li>
-			<li>Null</li>
-			<li>Undefined</li>
-			<li>Objects</li>
-		</ul>
-
-		<p>reference data types</p>
-		<ul>
-			<li>Array</li>
-			<li>Date</li>
-			<li>RegExp</li>
-		</ul>
-
-		<p id="dateField">&nbsp;</p>
-
-		<p id="dateField1">&nbsp;</p>
-
-	</div>
+</div>
 
 </div>
 
@@ -101,17 +377,17 @@
 	<form id="frmChangePin" action="" method="post" name="changepassword">
 		<div class="error" id="currentPINerror"></div>
 		<div class="internal-block">
-			<label for="comment-type">Enter your User Name</label>
+			<label>Enter your User Name</label>
 			<input type="text" name="name" class="username">
-			<label for="comment-type">Enter your First Name</label>
+			<label>Enter your First Name</label>
 			<input type="text" name="name" class="firstname">
-			<label for="comment-type">Enter your Last Name</label>
+			<label>Enter your Last Name</label>
 			<input type="text" name="name" class="lastname">
-			<label for="comment-type">Enter your Age</label>
+			<label>Enter your Age</label>
 			<input type="text" name="name" class="age">
-			<label for="comment-type">Enter your Email id</label>
+			<label>Enter your Email id</label>
 			<input type="email" name="name" class="email">
-			<label for="comment-type">Enter your password</label>
+			<label>Enter your password</label>
 			<input type="password" name="name" class="password">
 		</div>
 		<div style="margin-top: 20px;">

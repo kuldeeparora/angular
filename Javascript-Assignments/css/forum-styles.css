@@ -5,7 +5,7 @@
 	margin-left: 20px;
     margin-top: 10px;
 	background: #EEE;
-	padding: 20px 30px 20px 30px;
+	padding: 20px;
 	font: 12px Georgia, "Times New Roman", Times, serif;
 	color: #888;
 	text-shadow: 1px 1px 1px #FFF;
@@ -14,10 +14,10 @@
 }
 .basic-grey h1 {
 	font: 25px Georgia, "Times New Roman", Times, serif;
-	padding: 0px 0px 10px 40px;
+	padding: 0px 0px 10px 20px;
 	display: block;
 	border-bottom: 1px solid #DADADA;
-	margin: -10px -30px 30px -30px;
+	/*margin: -10px -30px 30px -30px;*/
 	color: #888;
 }
 .basic-grey h1>span {
@@ -569,4 +569,12 @@
 
 #task input[type="text"] {
     height: 27px;
+}
+
+ul, li {
+    padding: 4px;
+}
+
+.objects-li li {
+    margin-left: 6px;
 }

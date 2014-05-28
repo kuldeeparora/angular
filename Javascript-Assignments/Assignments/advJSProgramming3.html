@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>Loop</title>
+	<link href="../css/forum-styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="basic-grey" style="width: 500px;">
+	<h1>Grid</h1>
+
+	<table id="grid">
+		<tr>
+			<td>Name</td>
+			<td>Quantity</td>
+			<td>Price</td>
+			<td>Total</td>
+			<td></td>
+		</tr>
+		<tr class="grid-value">
+			<td><input type="text" placeholder="Name" class="prod-name"></td>
+			<td><input type="text" placeholder="Quantity" class="prod-quantity"></td>
+			<td><input type="text" placeholder="Price" class="prod-price"></td>
+			<td><div class="prod-total"></div></td>
+			<td>
+				<a href="#" class="add-product">Add</a>
+				<a href="#" class="remove-product">Remove</a>
+			</td>
+		</tr>
+	</table>
+	<a href="#" class="button" id="saveBtn">Submit Details</a>
+	<div class="details-show"></div>
+
+</div>
+
+<script src='../js/libs/jquery.min.js'></script>
+<script src='../js/application/grid.js'></script>
+
+</body>
+
+</html>

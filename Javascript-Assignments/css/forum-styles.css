@@ -13,8 +13,8 @@
     float: left;
 }
 .basic-grey h1 {
-	font: 25px Georgia, "Times New Roman", Times, serif;
-	padding: 0px 0px 10px 20px;
+	font: 20px Georgia, "Times New Roman", Times, serif;
+	/*padding: 0px 0px 10px 20px;*/
 	display: block;
 	border-bottom: 1px solid #DADADA;
 	/*margin: -10px -30px 30px -30px;*/
@@ -67,6 +67,7 @@
 	border: none;
 	padding: 10px 25px 10px 25px;
 	color: #FFF;
+    display: inline-block;
 }
 .basic-grey .button:hover {
 	background: #CF7A7A
@@ -567,8 +568,17 @@
     clear: both;
 }
 
-#task input[type="text"] {
+#task input[type="text"], #contact input[type="text"], #grid div input[type="text"] {
     height: 27px;
+}
+
+#grid input[type="text"] {
+    width: 90%;
+    margin-bottom: 2px;
+}
+
+#grid td {
+    width: 90px;
 }
 
 ul, li {
@@ -577,4 +587,8 @@ ul, li {
 
 .objects-li li {
     margin-left: 6px;
+}
+
+.details-show {
+    margin-top: 10px;
 }

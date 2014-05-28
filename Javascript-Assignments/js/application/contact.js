@@ -1,59 +1,44 @@
-// JSON Pattern
-
-var number = 0;
-
-function task(title, id, meeting, date) {
-    this.title = title;
-    this.id = id;
-    this.meeting = meeting;
-    this.date = date;
+function Contact(name, address, phone) {
+    this.name = name;
+    this.address = address;
+    this.phone = phone;
 }
 
-var tasks = [];
+var Contacts = [];
 
-var addTask = function () {
-    var taskTextbox = $('.task-textbox');
-    var taskId = "task" + (tasks.length + 1);
-    var meetingCheckbox = $('.meeting-checkbox');
-    var dateBox = $('#date-box');
-    var newTask = new task(taskTextbox.val(), taskId, meetingCheckbox.val(), dateBox.val());
-    tasks.push(newTask);
-    updateUI();
-};
-
-var updateUI = function () {
-    $('.task-show').empty();
-    var tasksLength = tasks.length;
-    var removeBtn = "<a href='#' class='remove-btn' onclick='removeTask(event)'>Remove Task</a>";
-    for (var i = 0; i < tasksLength; i++) {
-        var appendTasks = "<div id='" + tasks[i].id + "'>" + tasks[i].title + " ------- " + tasks[i].date + "------------" + removeBtn + "</div>";
-        $('.task-show').append(appendTasks);
-    }
-};
-
-
-$('.meeting-checkbox').click(function () {
-    $('#date-box').toggle();
+$('#addAddress').click(function () {
+    var addAddressInput = $('<input type="text" class="address" placeholder="Address">');
+    $(this).parent().prepend(addAddressInput);
 });
 
-function removeTask(event) {
-    var rowId = $(event.target).parent().attr("id");
-    var tasksLength = tasks.length;
-    for (var i = 0; i < tasksLength; i++) {
-        if (this.tasks[i].id == rowId) {
-            var index = tasks.indexOf(tasks[i].id);
-            tasks.splice(i, 1);
-            updateUI();
-            break;
-        }
+$('#addPhone').click(function () {
+    var addPhoneInput = $('<input type="text" class="phone" placeholder="Phone">');
+    $(this).parent().prepend(addPhoneInput);
+});
 
-    }
-//    updateUI();
-}
+$('#saveBtn').click(function () {
+    $('.details-show').empty();
+    var addresses = [];
+    var phones = [];
+    var name = $('#name').val();
+    $('.address').each(function(){
+        var address = $(this).val();
+        addresses.push(address);
+    });
+    $('.phone').each(function(){
+        var phone = $(this).val();
+        phones.push(phone);
+    });
+
+    var contact = new Contact(name, phones, addresses);
+
+    Contacts.push(contact);
+    console.log(contact);
+    $('.details-show').append(contact.name + " "  + contact.address + " " + contact.phone);
+});
 
 
-/*
- Meeting object in task
- tasks add in array
+// datagrid
+//4 columns
+// prodname, prod quantity, price, total, add, remove
 
- */

@@ -36,9 +36,3 @@ $('#saveBtn').click(function () {
     console.log(contact);
     $('.details-show').append(contact.name + " "  + contact.address + " " + contact.phone);
 });
-
-
-// datagrid
-//4 columns
-// prodname, prod quantity, price, total, add, remove
-

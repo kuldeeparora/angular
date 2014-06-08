@@ -1,4 +1,4 @@
-// JSON Pattern
+/* Task Management */
 
 var number = 0;
 
@@ -48,12 +48,4 @@ function removeTask(event) {
         }
 
     }
-//    updateUI();
 }
-
-
-/*
- Meeting object in task
- tasks add in array
-
- */

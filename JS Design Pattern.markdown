@@ -25,11 +25,18 @@ a. Fitness of purpose - how is the pattern considered successful<br>
 b. Usefulness- why is the pattern considered successful?<br>
 c. Applicability - is the design worthy of being a pattern because it has wider applicability? If so, this needs to be explained.When reviewing or defining a pattern, it is important to keep the above in mind.<br>
 
-<h3>Categories Of Design Pattern</h3>
-Creational Design Patterns :  Constructor, Factory, Abstract, Prototype, Singleton and Builder<br>
-Structural Design Patterns : Decorator, Facade, Flyweight, Adapter and Proxy<br>
-Behavioral Design Patterns : Iterator, Mediator, Observer and Visitor<br>
-<<<<<<< HEAD
+<h3>Categories(Kind) Of Design Pattern</h3>
+Creational Design Patterns :  Creational patterns provide instantiation mechanisms, making it easier to create objects
+in a way that suits the situation.<br>
+Constructor, Factory, Abstract, Prototype, Singleton and Builder<br>
+
+Structural Design Patterns : Structural patterns generally deal with relationships between entities, making it easier
+for these entities to work together. <br>
+Decorator, Facade, Flyweight, Adapter and Proxy<br>
+
+Behavioral Design Patterns : Behavioral patterns are used in communications between entities and make it easier and more
+flexible for these entities to communicate. <br>
+Iterator, Mediator, Observer and Visitor<br>
 
 <h3>Objects</h3>
 properties & method : hold complex data structure 
@@ -42,7 +49,6 @@ In JavaScript, the three common ways to create new objects are as follows:<br>
 var newObject = {}; // or 
 var newObject = Object.create(null); // or
 var newObject = new Object();
-=======
 
 <h3>Objects</h3>
 properties & method : hold complex data structure 
@@ -191,13 +197,136 @@ Singleton.getInstance().publicMethod();
 
 
 <h3>4. The Module Pattern</h3>
+The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in
+conventional software engineering. <br>
+The Module pattern encapsulates "privacy", state and organization using closures. It provides a way of wrapping a mix of
+public and private methods and variables, protecting pieces from leaking into the global scope and accidentally colliding
+with another developer's interface. With this pattern, only a public API is returned, keeping everything else within the
+closure private.
 <pre>
+    var testModule = (function () {
+
+      var counter = 0;
+
+      return {
+
+        incrementCounter: function () {
+          return counter++;
+        },
+
+        resetCounter: function () {
+          console.log( "counter value prior to reset: " + counter );
+          counter = 0;
+        }
+      };
+
+    })();
+
+    // Usage:
+
+    // Increment our counter
+    testModule.incrementCounter();
+
+    // Check the counter value and reset
+    // Outputs: 1
+    testModule.resetCounter();
 
 </pre>
 <h3>5. The Revealing Module Pattern</h3>
+We would simply define all of our functions and variables in the private scope and return an anonymous object with
+pointers to the private functionality we wished to reveal as public.
+
+An example of how to use the Revealing Module pattern can be found below:
+
 <pre>
 
+    var myRevealingModule = (function () {
+
+        var privateVar = "Ben Cherry",
+            publicVar  = "Hey there!";
+
+        function privateFunction() {
+            console.log( "Name:" + privateVar );
+        }
+
+        function publicSetName( strName ) {
+            privateVar = strName;
+        }
+
+        function publicGetName() {
+            privateFunction();
+        }
+
+
+        // Reveal public pointers to
+        // private functions and properties
+
+        return {
+            setName: publicSetName,
+            greeting: publicVar,
+            getName: publicGetName
+        };
+
+    })();
+
+    myRevealingModule.setName( "Paul Kinlan" );
+
+
+The pattern can also be used to reveal private functions and properties with a more specific naming scheme if we would prefer:
+
+
+    var myRevealingModule = (function () {
+
+        var privateCounter = 0;
+
+        function privateFunction() {
+            privateCounter++;
+        }
+
+        function publicFunction() {
+            publicIncrement();
+        }
+
+        function publicIncrement() {
+            privateFunction();
+        }
+
+        function publicGetCount(){
+          return privateCounter;
+        }
+
+        // Reveal public pointers to
+        // private functions and properties
+
+       return {
+            start: publicFunction,
+            increment: publicIncrement,
+            count: publicGetCount
+        };
+
+    })();
+
+    myRevealingModule.start();
 </pre>
+
+
+Advantages
+
+This pattern allows the syntax of our scripts to be more consistent. It also makes it more clear at the end of the
+module which of our functions and variables may be accessed publicly which eases readability.
+
+Disadvantages
+
+A disadvantage of this pattern is that if a private function refers to a public function, that public function can't be
+overridden if a patch is necessary. This is because the private function will continue to refer to the private
+implementation and the pattern doesn't apply to public members, only to functions.
+
+Public object members which refer to private variables are also subject to the no-patch rule notes above.
+
+As a result of this, modules created with the Revealing Module pattern may be more fragile than those created with the
+original Module pattern, so care should be taken during usage.
+
+
 <h3>6. The Observer Pattern</h3>
 <pre>
 
@@ -231,15 +360,10 @@ Singleton.getInstance().publicMethod();
 
 </pre>
 
->>>>>>> FETCH_HEAD
-
 Where the 'Object' constructor creates an object wrapper for a specific value, or where
 no value is passed, it will create an empty object and return it.
-</pre>
 
-<<<<<<< HEAD
 There are then four ways in which keys and values can then be assigned to an object:
-<pre>
 // ECMAScript 3 compatible approaches
 // 1. Dot syntax
 newObject.someKey = 'Hello World'; // Write properties
@@ -282,7 +406,3 @@ As we will see a little later, these methods can even be used for inheritance, a
 var driver = Object.create(man);
 defineProp(driver, 'topSpeed', '100mph');
 driver.topSpeed // 100mph
-</pre>
-=======
->>>>>>> FETCH_HEAD
-

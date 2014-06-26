@@ -1,6 +1,6 @@
 ## Namespacing
 
-Naming Conventions
+<h2>Naming Conventions<h2>
 TitleCase, camelCase -
 Follow the camel case convention, typing the words in lower-case, only capitalizing the first letter in each word.
 Examples

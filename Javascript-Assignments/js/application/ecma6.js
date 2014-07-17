@@ -1,10 +1,11 @@
-var result = [];
-
-for (var length = 0; length--;){
-    let len = length;
-    result[len] = function(){
-        return len;
-    }
+class Calc {
+    constructor(){
+    console.log('Calc constructor');
+}
+    add(a, b){
+    return a + b;
+}
 }
 
-result[5]();
+var c = new Calc();
+console.log(c.add(4,5)); // prints 9

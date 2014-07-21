@@ -38,10 +38,44 @@ var num = new Number(10) -> undefined
 num.property = "hello" -> "hello"
 num.property  -> "hello"
 
-
+Old way
 var person = new Object();
 person.firstName = "John"
 person.lastName = "Doe"
+
+New & Faster Way to use literals orientation -
+
+var person = {
+    firstName : "John",
+    lastName : "Doe",
+    sayHi : function(){
+        return "Hi There"
+    }
+}
+Reason -
+Performance - Javascript execute single complex statement faster.
+Organisation - Everything evolving the def of person objects in chunk of god
+Keystrokes - lesser
+
+
+Functions
+There are 2 types of functions
+Factory & Constructor
+
+Factory Function
+var createPerson = function(firstName, lastName){
+    return {
+        firstName : firstName,
+        lastName : lastName,
+        sayHi : function() {
+            return "Hi There";
+        }
+    };
+};
+
+var John = createPerson("John", "Doe");
+var James = createPerson("James", "Doe");
+
 
 
 

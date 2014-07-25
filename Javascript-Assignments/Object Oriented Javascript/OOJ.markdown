@@ -73,6 +73,8 @@ var createPerson = function(firstName, lastName){
     };
 };
 
+Interface is Signature in this tutorial
+
 var John = createPerson("John", "Doe");
 var James = createPerson("James", "Doe");
 

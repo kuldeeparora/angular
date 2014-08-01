@@ -3,6 +3,14 @@
 (function(){
     "use strict";
 
+    for(var a = 1; a < 50; a++){
+        if( a % 3 == 0){
+            console.log(a + 'in');
+            continue;
+        }
+        console.log(a + 'out');
+    }
+
     for (var num=1; num<=5; num++ ){
         for (var seq=1; seq<=num; seq++ ){
             $(".loop1").append("<div style='float: left;'>" + num + "</div>");

@@ -9,6 +9,8 @@ use <database> - Switch to another database or create new db
 show - collections Lists the available collections(show dbs //to show all dbs -)
 help - Prints available commands and help
 
+show dbs - show dbs
+show tables - show collections(collections are tables)
 
 Finding Documents
 db.ships.findOne() - Finds one arbitrary document
@@ -48,10 +50,43 @@ Dictionaries - associate maps { keyword:value } //separated by commas
 
 
 
-BSON - binary json protocol
 collection means database
 
 
 mongod --dbpath=/data/db
 mongorestore dump
+
+
+CRUD -  create, read, update & delete
+
+Curd -      Mongo -     SQL
+Create -    Insert -    Insert
+Read -      Find -      Select
+Update -    Update -    Update
+Delete -    Remove -    Delete
+
+MongoDB CRUD operations exist as method/functions in programing language API's, not as a separate language
+Mongo doesn't have its own query language like SQL
+
+Mongo Shell - Interactive JS Interpreter -
+for(i=0; i<3;i++) print('Kuldeep'+i); in shell
+
+help
+ctrl a - start of the line
+ctrl e - end of the line
+ctrl k - del to end of line
+
+
+
+BSON - binary json protocol
+BSON supports strings, floating-point numbers, arrays, objects, timestamps.
+BSON doesn't supports complex numbers
+
+
+Inserting Doc
+
+
+
+
+
 

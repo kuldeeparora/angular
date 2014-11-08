@@ -1,8 +1,5 @@
 Mango DB
 
-Insert
-db.ships.insert({name:'Narada',operator:'Romulan Star Empire',type:'Warbird',class:'Warbird',crew:65,codes:[251,251,220]}) //insert values
-
 Basic Concepts & Shell Commands
 db.ships.<command> db – implicit handle to the used database (ships – name of the used collection)
 use <database> - Switch to another database or create new db
@@ -33,7 +30,7 @@ db.ships.remove({name:{$regex:’^USS\\sE’}}) removes using operator
 
 
 
-Schema - Mango is Scehmaless
+Schema - Mango is Schemaless
 
 var j = db.ship.findOne({'name': 'Narada'})
 j.favourite_color = 'blue' // add new json data
@@ -84,7 +81,31 @@ BSON doesn't supports complex numbers
 
 
 Inserting Doc
+1. doc = {name:'AD', age:34,profession:'hacker'}
+db.test.insert(doc)
 
+2. db.test.insert({name:'Narada',operator:'Romulan Star Empire',type:'Warbird',class:'Warbird',crew:65,codes:[251,251,220]}) //insert values
+
+_id : primary key field - immutable
+
+
+FindOne
+db.test.findOne()
+db.test.findOne({'name' : 'AD'})
+
+insert random numbers
+for(i=0; i<100; i++) {names= ['exam', 'essay', 'quiz']; for (j=0; j<3; j++){db.m101.insert({student:i, type:names[j], score:Math.round(Math.random()*100)});}}
+
+// find greater than 95
+db.m101.find({score: { $gt : 95}})
+db.m101.find({score: { $gt : 95}, type:'essay'})
+db.m101.find({score: { $gt : 90, $lte : 97}, type:'essay'})
+
+$exists, $type
+db.m101.find({profession: { $exists : true}})
+db.m101.find({name: { $type : 2}}) // 2 is a string in bson
+db.m101.find({name: { $regex : 'a'}})
+db.m101.find({name: { $regex : 'e$'}}) // letter end with e
 
 
 

@@ -101,11 +101,20 @@ db.m101.find({score: { $gt : 95}})
 db.m101.find({score: { $gt : 95}, type:'essay'})
 db.m101.find({score: { $gt : 90, $lte : 97}, type:'essay'})
 
+Inequality on strings
 $exists, $type
 db.m101.find({profession: { $exists : true}})
 db.m101.find({name: { $type : 2}}) // 2 is a string in bson
 db.m101.find({name: { $regex : 'a'}})
 db.m101.find({name: { $regex : 'e$'}}) // letter end with e
+db.m101.find({name: { $regex : '^A'}}) // letter starts with A
+
+example retrieve doc where username has a 'q' in it & doc has email field
+db.m101.find({name: { $regex : 'q'}, email : {$exists : true } });
+
+Find score is less than 50 or greater than 90
+db.m101.find({ $or : [{score : { $lt : 50 }},{score : { $gt : 90 }} ]});
+
 
 
 

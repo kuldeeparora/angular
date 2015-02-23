@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>The Event-Driven Programming
+        <ul>
+            <li>Event-driven programming is a programming style whereby the flow of execution is determined by
+                events. Events are handled by event handlers or event callbacks. An event callback is a function that
+                is invoked when something significant happens — such as when the result of a database query is
+                available or when the user clicks on a button.</li>
+            <li>In event-driven programming you start by defining the code that will be executed when an event
+                occurs, then put that code inside a function, and finally pass that function as an argument to be
+                called later.</li>
+            <li><code>
+                query_finished = function(result) {<br>
+                do_something_with(result);<br>
+                }<br>
+                query('SELECT * FROM posts WHERE id = 1', query_finished);
+            </code></li>
+        </ul>
+    </li>
+    <li>Closures
+        <ul>
+            <li>
+                <p>Example 1</p>
+                <code>
+                (function() { <br>
+                var clickCount = 0; <br>
+                $('button#mybutton').click(function() { <br>
+                clickCount ++; <br>
+                alert('Clicked ' + clickCount + ' times.'); <br>
+                }); <br>
+                }()); <br>
+            </code>
+                <p>Example 2 - Very good example - Javascript-Assignments/Object%20Oriented%20Javascript/ooj.html</p>
+            </li>
+        </ul>
+    </li>
+    <li>Loading Modules
+        <ul>
+            <li>In Node, modules are referenced either by file path or by name. A module that is referenced by a
+                name will eventually map into a file path unless the module is a core module.</li>
+            <li>Each module of any type exposes a public API that the programmer can use after the module is
+                imported into the current script. To use a module of any type, you have to use the require function
+                like this: <br>
+                <code>var module = require('module_name');</code> <br>
+                This will import a core module or a module installed by NPM. The require function returns
+                an object that represents the JavaScript API exposed by the module. Depending on the module, that
+                object can be any JavaScript value — a function, an object with some properties that can be
+                functions, an array, or any other type of JavaScript object.
+            </li>
+        </ul>
+    </li>
+    <li>Exporting & Loading a Module
+        <ul>
+            <li>The CommonJS module system is the only way you can share objects or functions among fi les in
+                Node. For a sufficiently complex application you should divide some of the classes, objects, or
+                functions into reusable well-defined modules. To the module user, a module exposes exactly what
+                you specify it to.</li>
+            <li>Javascript-Assignments/nodejs/module2.js</li>
+        </ul>
+    </li>
+    <li>Creating a Buffer
+
+    </li>
+</ul>
+
+<div>
+    <div>Not available in Node : window, document, location not available in chrome</div>
+    <div>Available in Node : global, module, process, require</div>
+</div>
+
+<div>
+    <h3>Important Nodejs</h3>
+    1. Node runs all the code in program once & then wait for all call ball function to finish
+    2.Module is a variable that represents the module you are currently in.
+    Module.exports is the object that the module will export to other scripts that require this module.
+    You can export any object.
+
+    <h3>Important Npm</h3>
+    1. npm prune will remove unused module
+</div>
+
+<script src="module2.js"></script>
+</body>
+</html>

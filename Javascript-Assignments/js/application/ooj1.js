@@ -69,3 +69,67 @@ console.log(person);
 //for (prop in person){
 //}
 
+
+// Closure Example
+var aHero = function(){
+    return "Hero";
+}
+var aFoil = function(){
+    return "Foil";
+}
+var aDeed = function(){
+    return "eyes";
+}
+var sagas = [];
+var hero = aHero();
+var newSaga = function(){
+    var foil = aFoil();
+    sagas.push(function(){
+        var deed = aDeed();
+        console.log(hero+deed+foil);
+    });
+};
+newSaga();
+sagas[0](); //
+
+
+// explaining this
+var fn = function(one, two){
+    console.log(this, one, two);
+}
+
+var r = {}, g = 'b', b = 'c', y = 'd';
+
+r.method = fn;
+
+//r.method(g,b); //Object { method: fn() } "b" "c"
+//fn(g,b) // output is global, b ,c
+//fn.call(r,g,b) // Object { method: fn() } "b" "c"
+r.method.call(y,g,b) // String [ "d" ] "b" "c"
+
+
+
+// Prototype Chains
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

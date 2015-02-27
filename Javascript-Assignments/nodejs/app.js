@@ -5,23 +5,18 @@
 var flight = require('./flight');
 
 var pdxdax = {
-    number : 878,
+    number : 872,
     origin : 'pdx',
     destination : 'dax'
 };
 
 
-var pl = flight(pdxdax);
+var pl = flight.create(pdxdax);
 
 pl.triggerArrive();
 pl.triggerDepart();
 
 console.log(pl.getInformation());
 
-//flight.setOrigin('LAX');
-//flight.setDestination('DCA');
-//flight.setNumber(462);
-//
-//console.log(flight.getInfo());
-//
-//console.log('test');
+console.log(flight.getCount());
+console.log(flight.getDestinations());

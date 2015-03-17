@@ -16,7 +16,6 @@ function getRepos(username, callback){
         response.on("end", function () {
             var repos = [];
             var json = JSON.parse(body);
-            //console.log(body); // if we run console then json for each working... may be we need to store body
             json.forEach(function (repo) {
                 repos.push({
                     name : repo.name,
@@ -27,16 +26,16 @@ function getRepos(username, callback){
         });
 
         response.on("error", function (error) {
-           console.log(error.message);
+            console.log(error.message);
         });
     });
+
+    request.on("error", function (error) {
+        console.log(error.message);
+    });
+
     request.end();
-}
 
-getRepos("kuldeeparora", function (repos) {
-    console.log("kuldeep repos " , repos);
-});
+};
 
-getRepos("mongodb", function (repos) {
-    console.log("mongodb repos " , repos.length);
-});
+module.exports.getRepos = getRepos;

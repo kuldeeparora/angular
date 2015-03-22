@@ -8,6 +8,11 @@
 <h2>
     Q. What is NodeJS <br>
     A. Node.js is an envronment that lets you use javascript outside of its natural environment, which is the browser.
+    Nodejs is an interpreter and environment for javascript which includes a bunch of libraries for using javascript as
+    a general-purpose programming language, with an emphasis on asynchronicity and non-blocking operations. Node
+    actually runs the same interpreter as Google Chrome (V8), but provides a different set of libraries and a different
+    run-time environment. It also includes a package management system (NPM) and a few language extensions you won't
+    find standard in browsers (for example modules).
 </h2>
 <ul>
     <li>
@@ -50,10 +55,12 @@
             <li>Event-driven programming is a programming style whereby the flow of execution is determined by
                 events. Events are handled by event handlers or event callbacks. An event callback is a function that
                 is invoked when something significant happens — such as when the result of a database query is
-                available or when the user clicks on a button.</li>
+                available or when the user clicks on a button.
+            </li>
             <li>In event-driven programming you start by defining the code that will be executed when an event
                 occurs, then put that code inside a function, and finally pass that function as an argument to be
-                called later.</li>
+                called later.
+            </li>
             <li><code>
                 query_finished = function(result) {<br>
                 do_something_with(result);<br>
@@ -67,14 +74,15 @@
             <li>
                 <p>Example 1</p>
                 <code>
-                (function() { <br>
-                var clickCount = 0; <br>
-                $('button#mybutton').click(function() { <br>
-                clickCount ++; <br>
-                alert('Clicked ' + clickCount + ' times.'); <br>
-                }); <br>
-                }()); <br>
-            </code>
+                    (function() { <br>
+                    var clickCount = 0; <br>
+                    $('button#mybutton').click(function() { <br>
+                    clickCount ++; <br>
+                    alert('Clicked ' + clickCount + ' times.'); <br>
+                    }); <br>
+                    }()); <br>
+                </code>
+
                 <p>Example 2 - Very good example - Javascript-Assignments/Object%20Oriented%20Javascript/ooj.html</p>
             </li>
         </ul>
@@ -82,7 +90,8 @@
     <li>Loading Modules
         <ul>
             <li>In Node, modules are referenced either by file path or by name. A module that is referenced by a
-                name will eventually map into a file path unless the module is a core module.</li>
+                name will eventually map into a file path unless the module is a core module.
+            </li>
             <li>Each module of any type exposes a public API that the programmer can use after the module is
                 imported into the current script. To use a module of any type, you have to use the require function
                 like this: <br>
@@ -99,7 +108,8 @@
             <li>The CommonJS module system is the only way you can share objects or functions among fi les in
                 Node. For a sufficiently complex application you should divide some of the classes, objects, or
                 functions into reusable well-defined modules. To the module user, a module exposes exactly what
-                you specify it to.</li>
+                you specify it to.
+            </li>
             <li>Javascript-Assignments/nodejs/module2.js</li>
         </ul>
     </li>

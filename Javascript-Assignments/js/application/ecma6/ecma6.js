@@ -22,7 +22,6 @@ let me = new Developer("James", 23, "ES5", "ES6");     // Block scoping
 
     */
 
-
 // tagtree.io
 
 let color = "red";
@@ -34,7 +33,6 @@ let go = function(){
 let car = {color, speed, go}; // var car = {color: color, speed:speed, go:go} // similar for es5
 console.log(car.color);
 car.go();
-
 
 
 var func = (x ,y) => {
@@ -52,7 +50,6 @@ function sayHello(){
     }, 10);
 }
 sayHello();
-
 
 var kd = {
     name : 'KD',
@@ -73,6 +70,7 @@ var breed = 'schnauzer';
 var owners = ['KD', 'Alice']
 
 console.log(`${name} ${breed}:`);
+
 for(i=0; i<owners.length; i++){
     let name = owners[i];
     console.log(`owner ${name}`);
@@ -84,6 +82,8 @@ var x =999;
 for (var i=0; i<10; i++){
     let x = i * 2;
 }
+
+
 console.log(x);
 
 function letUsage() {
@@ -95,6 +95,7 @@ function letUsage() {
     console.log(`foo2 is ${foo}`);
 }
 letUsage();
+
 
 // const defined
 const foot = 'abc';

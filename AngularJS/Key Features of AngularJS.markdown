@@ -17,14 +17,20 @@ Key Features of AngularJS
 
 Scope
 The job of the Scope is to detect changes to model objects and create an execution context for expressions.
-There is one root scope for the application (ng-app) with hierarchical children scopes. It marshals the model to the view and forwards events to the controller.
-
+There is one root scope for the application (ng-app) with hierarchical children scopes.
+It marshals the model to the view and forwards events to the controller.
 
 Controller
-The Controller is responsible for construction of the model and connects it to the view (HTML). The scope sits between the controller and the view. Controllers should be straightforward and simply contain the business logic needed for a view. Generally you want thin controllers and rich services. Controllers can be nested and handle inheritance. The big difference in AngularJS from the other JavaScript frameworks is there is no DOM manipulation in controllers. It is something to unlearn when developing in AngularJS.
+The Controller is responsible for construction of the model and connects it to the view (HTML).
+The scope sits between the controller and the view.
+Controllers should be straightforward and simply contain the business logic needed for a view.
+Generally you want thin controllers and rich services. Controllers can be nested and handle inheritance.
+The big difference in AngularJS from the other JavaScript frameworks is there is no DOM manipulation in controllers.
+It is something to unlearn when developing in AngularJS.
 
 Model
-In AngularJS, a Model is simply a JavaScript object. No need to extend anything or create any structure. This allows for nested models  - something that Backbone doesn’t do out-of-the-box.
+In AngularJS, a Model is simply a JavaScript object. No need to extend anything or create any structure.
+This allows for nested models  - something that Backbone doesn’t do out-of-the-box.
 
 View
 The View is based on DOM objects, not on strings. The view is the HTML. HTML is declarative – well suited for UI design. The View should not contain any functional behavior. The flexibility here is to allow for multiple views per Controller.
@@ -36,7 +42,12 @@ Data Binding
 Data Binding in AngularJS is a two-way binding between the View and the Model. Automatic synchronizing between views and data models makes this really easy (and straightforward) to use. Updating the model is reflected in View without any explicit JavaScript code to bind them together, or to add event listeners to reflect data changes.
 
 Directives
-Now this is cool. AngularJS allows you to use Directives to transform the DOM or to create new behavior. A directive allows you to extend the HTML vocabulary in a declarative fashion. The ‘ng’ prefix stands for built-in AngularJS directives. The App (ng-app), Model (ng-model), the Controller (ng-controller), etc. are built into the framework. AngularJS allows for building your own directives. Building directives is not extremely difficult, but not easy either. There are different things that can be done with them. Please check out AngularJS’s documentation on directives.
+Now this is cool. AngularJS allows you to use Directives to transform the DOM or to create new behavior.
+A directive allows you to extend the HTML vocabulary in a declarative fashion.
+The ‘ng’ prefix stands for built-in AngularJS directives.
+The App (ng-app), Model (ng-model), the Controller (ng-controller), etc. are built into the framework.
+AngularJS allows for building your own directives. Building directives is not extremely difficult, but not easy either.
+There are different things that can be done with them. Please check out AngularJS’s documentation on directives.
 
 Filters
 The Filters in AngularJS perform data transformation. They can be used to do formatting (like I did in my Directives example with padding zeros), or they can be used to do filter results (think search).

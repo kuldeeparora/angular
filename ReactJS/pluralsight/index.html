@@ -34,11 +34,30 @@
             width: 20%;
             float: left;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
         }
 
         #stars-frame .well, #answer-frame .well {
-            height: 150px;
+            height: 175px;
+        }
+
+        #numbers-frame .number, #answer-frame .well .span {
+            display: inline-block;
+            margin: 0.5em;
+            background-color: #bbb;
+            width: 30px;
+            text-align: center;
+            font-size: 22px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50% ;
+            cursor: pointer;
+        }
+
+        #numbers-frame .selected-true {
+            background-color: #e8e8e8;
+            color: #DDDDDD;
+            cursor: not-allowed;
         }
 
     </style>

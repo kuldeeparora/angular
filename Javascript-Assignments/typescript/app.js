@@ -1,13 +1,15 @@
 function GetAllBooks() {
     var books = [
-        { title: 'first', author: 'One', available: false, category: Category.bio },
-        { title: 'second', author: 'two', available: true, category: Category.poetry },
-        { title: 'third', author: 'three', available: false, category: Category.children },
-        { title: 'fourth', author: 'four', available: false, category: Category.history }
+        { id: 1, title: 'first', author: 'One', available: false, category: Category.bio },
+        { id: 2, title: 'second', author: 'two', available: true, category: Category.poetry },
+        { id: 3, title: 'third', author: 'three', available: false, category: Category.children },
+        { id: 4, title: 'fourth', author: 'four', available: false, category: Category.history },
+        { id: 5, title: 'fifth', author: 'five', available: false, category: Category.fiction }
     ];
     return books;
 }
 function LogFirstAvailableBook(books) {
+    if (books === void 0) { books = GetAllBooks(); }
     var numberOfBooks = books.length;
     var availableBook = '';
     for (var _i = 0, books_1 = books; _i < books_1.length; _i++) {
@@ -29,7 +31,8 @@ var Category;
     Category[Category["fiction"] = 4] = "fiction";
 })(Category || (Category = {}));
 function GetBookTitleByCategory(categoryFilter) {
-    console.log("Getting books in category " + categoryFilter);
+    if (categoryFilter === void 0) { categoryFilter = Category.fiction; }
+    console.log("Getting books in category " + Category[categoryFilter]);
     var allBook = GetAllBooks();
     var filteredTitles = [];
     // LogFirstAvailableBook(allBook);
@@ -47,5 +50,31 @@ function LogBookTitles(titles) {
         console.log(title);
     }
 }
-var poetryBooks = GetBookTitleByCategory(Category.poetry);
-LogBookTitles(poetryBooks);
+function GetBookID(id) {
+    var allBooks = GetAllBooks();
+    return allBooks.filter(function (book) { return book.id === id; })[0];
+}
+function PublicationMessage(year) {
+    return 'Date published ' + year;
+}
+var publishFunc;
+publishFunc = PublicationMessage;
+var message = publishFunc(2016);
+function CreateCustomId(name, id) {
+    return name + id;
+}
+var iDGenerator;
+iDGenerator = CreateCustomId;
+//********************************************************
+LogFirstAvailableBook();
+// let poetryBooks = GetBookTitleByCategory(Category.poetry);
+// poetryBooks.forEach(title => console.log(title));
+// let fictionBooks = GetBookTitleByCategory();
+// fictionBooks.forEach(title => console.log(title));
+// let myID : string = iDGenerator("KD", 2) ;
+// console.log(myID);
+//
+// const fictionBooks = GetBookTitleByCategory(Category.fiction);
+// fictionBooks.forEach((val, idx, arr) => console.log(++idx + ' - ' + val));
+// const poetryBooks = GetBookTitleByCategory(Category.poetry);
+// LogBookTitles(poetryBooks); 

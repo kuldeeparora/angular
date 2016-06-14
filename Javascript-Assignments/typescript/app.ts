@@ -1,14 +1,15 @@
 function GetAllBooks(){
     let books = [
-        {title : 'first', author : 'One', available : false, category: Category.bio},
-        {title : 'second', author : 'two', available : true, category: Category.poetry},
-        {title : 'third', author : 'three', available : false, category: Category.children},
-        {title : 'fourth', author : 'four', available : false, category: Category.history}
+        {id: 1, title : 'first', author : 'One', available : false, category: Category.bio},
+        {id: 2, title : 'second', author : 'two', available : true, category: Category.poetry},
+        {id: 3, title : 'third', author : 'three', available : false, category: Category.children},
+        {id: 4, title : 'fourth', author : 'four', available : false, category: Category.history},
+        {id: 5, title : 'fifth', author : 'five', available : false, category: Category.fiction}
     ];
     return books;
 }
 
-function LogFirstAvailableBook(books) : void {
+function LogFirstAvailableBook(books = GetAllBooks()) : void {
     let numberOfBooks : number = books.length;
     let availableBook : string = '';
 
@@ -25,7 +26,7 @@ function LogFirstAvailableBook(books) : void {
 
 enum Category {bio, poetry, children, history, fiction}
 
-function GetBookTitleByCategory(categoryFilter: Category): Array<string> {
+function GetBookTitleByCategory(categoryFilter: Category = Category.fiction): Array<string> {
     console.log("Getting books in category " + Category[categoryFilter]);
 
     const allBook = GetAllBooks();
@@ -46,6 +47,46 @@ function LogBookTitles(titles: string[]): void{
     }
 }
 
-const poetryBooks = GetBookTitleByCategory(Category.poetry);
+function GetBookID(id: number){
+    const allBooks = GetAllBooks();
+    return allBooks.filter(book => book.id === id)[0];
+}
 
-LogBookTitles(poetryBooks);
+function PublicationMessage(year : number): string {
+    return 'Date published ' + year;
+}
+
+let publishFunc : (someYear: number) => string;
+
+publishFunc = PublicationMessage;
+
+let message: string = publishFunc(2016);
+
+
+function CreateCustomId(name: string, id: number): string {
+    return name + id;
+}
+
+let iDGenerator: (chars: string, num: number) => string;
+iDGenerator = CreateCustomId;
+
+//********************************************************
+
+
+LogFirstAvailableBook();
+
+// let poetryBooks = GetBookTitleByCategory(Category.poetry);
+// poetryBooks.forEach(title => console.log(title));
+
+// let fictionBooks = GetBookTitleByCategory();
+// fictionBooks.forEach(title => console.log(title));
+
+// let myID : string = iDGenerator("KD", 2) ;
+// console.log(myID);
+//
+// const fictionBooks = GetBookTitleByCategory(Category.fiction);
+// fictionBooks.forEach((val, idx, arr) => console.log(++idx + ' - ' + val));
+
+
+// const poetryBooks = GetBookTitleByCategory(Category.poetry);
+// LogBookTitles(poetryBooks);
